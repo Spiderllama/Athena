@@ -7,22 +7,25 @@
 		: name(new_name), role(new_role), health(new_health), armor(new_armor), shield(new_shield), dps(new_dps), age(new_age) {}*/
 	
 	std::string Heroes::hero_info() {
-		std::string info;
+		using namespace std;
+		string info;
+
 		info += "Name: ";
 		info += name;
 		info += "\nAge: ";
-		info += age;
+		info += to_string(age);
 		info += "\nRole: ";
 		info += role; 
 		info += "\nHealth: ";
-		info += health;
+		info += to_string(health);
 		info += "\nArmor: ";
-		info += armor;
+		info += to_string(armor);
 		info += "\nShields: ";
-		info += shield;
+		info += to_string(shield);
 		info += "\nDamage Per Shot: ";
-		info += dps;
+		info += to_string(dps);
 		info += "\n\n";
+
 		return info;
 	}
 
@@ -40,59 +43,181 @@
 		//cin.ignore(numeric_limits<streamsize>::max(), '\n'); Don't need to use this after Getline, seems that only cin directly causes a \n
 		cout << "\n" << name << " is a wonderful name! Next, enter their age ";
 		cin >> age;
+
 		while (1) {
 			if (cin.fail()) {
 				cin.clear();
 				cin.ignore(numeric_limits<streamsize>::max(), '\n');
 				if (smartass_counter == 0) {
-					cout << "\nI'm 100% sure that age can't contain alphabetic characters. NUMBERS ONLY! \nPlease try again: ";
+					cout << "\nI'm 100% sure that age can't contain alphabetic characters. NUMBERS ONLY! Please try again: ";
 				}
 				else if (smartass_counter == 1) {
-					cout << "\nAs I already stated,  \nPlease try again: ";
+					cout << "\nAs we previously discussed you can't use letters. NUMBERS ONLY! Please try again: ";
 				}
 				else if (smartass_counter == 2) {
-
+					cout << "\n3rd time is not the charm. See, even *I* can use numbers and I'm just machinery. NUMBERS ONLY! Please try again: ";
 				}
 				else if (smartass_counter == 3) {
-
+					cout << "\nDid you really think that typing a letter again would have a different result?\n\nDo you know what the definition of insanity is? NUMBERS ONLY! Try again: ";
 				}
 				else if (smartass_counter == 4) {
-
+					cout << "\nI'm glad you're not the hero in question as I would very much be concerned with your IQ. NUMBERS ONLY!\n\nDo it again: ";
 				}
 				else if (smartass_counter >= 5) {
-
+					cout << "\nTHAT'S IT! I'm done with you. Message set to repeat.\n\n**** off and also NUMBERS ONLY!!  ";
 				}
-				
+				smartass_counter++;
+				cin >> age;
 			}
 			if (!cin.fail()) {
 				break;
 			}
 		}
 
-
-
-
-
 		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		cout << "\nI remember when I was that young....-sigh-...I digress, what is the primary role of the Hero? ";
 		getline(cin, role);
 		cout << "\nWe could always use another " << role << " in our line of work. How much health does " << name << " have: ";
 		cin >> health;
+
+		while (1) {
+			if (cin.fail()) {
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				if (smartass_counter == 0) {
+					cout << "\nI'm 100% sure that health pools can't contain alphabetic characters. NUMBERS ONLY! Please try again: ";
+				}
+				else if (smartass_counter == 1) {
+					cout << "\nAs we previously discussed you can't use letters. NUMBERS ONLY! Please try again: ";
+				}
+				else if (smartass_counter == 2) {
+					cout << "\n3rd time is not the charm. See, even *I* can use numbers and I'm just machinery. NUMBERS ONLY! Please try again: ";
+				}
+				else if (smartass_counter == 3) {
+					cout << "\nDid you really think that typing a letter again would have a different result?\n\nDo you know what the definition of insanity is? NUMBERS ONLY! Try again: ";
+				}
+				else if (smartass_counter == 4) {
+					cout << "\nI'm glad you're not the hero in question as I would very much be concerned with your IQ. NUMBERS ONLY! Do it again: ";
+				}
+				else if (smartass_counter >= 5) {
+					cout << "\nTHAT'S IT! I'm done with you. Message set to repeat.\n\n**** off and also NUMBERS ONLY!!  ";
+				}
+				smartass_counter++;
+				cin >> health;
+			}
+			if (!cin.fail()) {
+				break;
+			}
+		}
+
 		cin.ignore(numeric_limits<streamsize>::max(), '\n');
-		cout << "\nI'm glad they're so healthy. Do they wear any armor? ";
+		cout << "\nI'm glad they're so healthy. Do they wear any armor and if yes how much? ";
 		cin >> armor;
+
+		while (1) {
+			if (cin.fail()) {
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				if (smartass_counter == 0) {
+					cout << "\nI'm 100% sure that armor weight can't contain alphabetic characters. NUMBERS ONLY! Please try again: ";
+				}
+				else if (smartass_counter == 1) {
+					cout << "\nAs we previously discussed you can't use letters. NUMBERS ONLY! Please try again: ";
+				}
+				else if (smartass_counter == 2) {
+					cout << "\n3rd time is not the charm. See, even *I* can use numbers and I'm just machinery. NUMBERS ONLY! Please try again: ";
+				}
+				else if (smartass_counter == 3) {
+					cout << "\nDid you really think that typing a letter again would have a different result?\n\nDo you know what the definition of insanity is? NUMBERS ONLY! Try again: ";
+				}
+				else if (smartass_counter == 4) {
+					cout << "\nI'm glad you're not the hero in question as I would very much be concerned with your IQ. NUMBERS ONLY!\n\nDo it again: ";
+				}
+				else if (smartass_counter >= 5) {
+					cout << "\nTHAT'S IT! I'm done with you. Message set to repeat.\n\n**** off and also NUMBERS ONLY!!  ";
+				}
+				smartass_counter++;
+				cin >> armor;
+			}
+			if (!cin.fail()) {
+				break;
+			}
+		}
+
 		cin.ignore(numeric_limits<streamsize>::max(), '\n');
-		if (armor > 0) cout << "\nNot everyone can wear armor that weighs " << armor << " pounds. They must be really strong!";
+		if (armor > 0) cout << "\nNot everyone can wear armor that weighs " << armor << " pounds. They must be really strong!\n";
 		if (armor == 0) cout << "\nIt must be too heavy, that's OK.\n";
 		cout << "\nHow about shields? Do they have any of those online? ";
 		cin >> shield;
+
+		while (1) {
+			if (cin.fail()) {
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				if (smartass_counter == 0) {
+					cout << "\nI'm 100% sure that shield % can't contain alphabetic characters. NUMBERS ONLY! Please try again: ";
+				}
+				else if (smartass_counter == 1) {
+					cout << "\nAs we previously discussed you can't use letters. NUMBERS ONLY! Please try again: ";
+				}
+				else if (smartass_counter == 2) {
+					cout << "\n3rd time is not the charm. See, even *I* can use numbers and I'm just machinery. NUMBERS ONLY! Please try again: ";
+				}
+				else if (smartass_counter == 3) {
+					cout << "\nDid you really think that typing a letter again would have a different result?\n\nDo you know what the definition of insanity is? NUMBERS ONLY! Try again: ";
+				}
+				else if (smartass_counter == 4) {
+					cout << "\nI'm glad you're not the hero in question as I would very much be concerned with your IQ. NUMBERS ONLY!\n\nDo it again: ";
+				}
+				else if (smartass_counter >= 5) {
+					cout << "\nTHAT'S IT! I'm done with you. Message set to repeat.\n\n**** off and also NUMBERS ONLY!!  ";
+				}
+				smartass_counter++;
+				cin >> shield;
+			}
+			if (!cin.fail()) {
+				break;
+			}
+		}
+
 		cin.ignore(numeric_limits<streamsize>::max(), '\n');
-		if (shield > 0) cout << "\nIt's nice to have someone on the team that understand tech really well!";
+		if (shield > 0) cout << "\nIt's nice to have someone on the team that understand tech really well!\n";
 		if (shield == 0) cout << "\nShields are overrated anyways.\n";
 		cout << "\nHow much damage or healing do they do with a single shot of their weapon? ";
 		cin >> dps;
+
+		while (1) {
+			if (cin.fail()) {
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				if (smartass_counter == 0) {
+					cout << "\nI'm 100% sure that weapon damage can't contain alphabetic characters. NUMBERS ONLY! Please try again: ";
+				}
+				else if (smartass_counter == 1) {
+					cout << "\nAs we previously discussed you can't use letters. NUMBERS ONLY! Please try again: ";
+				}
+				else if (smartass_counter == 2) {
+					cout << "\n3rd time is not the charm. See, even *I* can use numbers and I'm just machinery. NUMBERS ONLY! Please try again: ";
+				}
+				else if (smartass_counter == 3) {
+					cout << "\nDid you really think that typing a letter again would have a different result?\n\nDo you know what the definition of insanity is? NUMBERS ONLY! Try again: ";
+				}
+				else if (smartass_counter == 4) {
+					cout << "\nI'm glad you're not the hero in question as I would very much be concerned with your IQ. NUMBERS ONLY!\n\nDo it again: ";
+				}
+				else if (smartass_counter >= 5) {
+					cout << "\nTHAT'S IT! I'm done with you. Message set to repeat.\n\n**** off and also NUMBERS ONLY!!  ";
+				}
+				smartass_counter++;
+				cin >> dps;
+			}
+			if (!cin.fail()) {
+				break;
+			}
+		}
+
 		cin.ignore(numeric_limits<streamsize>::max(), '\n');
-		cout << dps << " is a good amount. Maybe sometime I could check out their weapon and see how it works? ";
+		cout << "\n" << dps << " is a good amount. Maybe sometime I could check out their weapon and see how it works?\n ";
 		cout << "\nWell it looks like that's everything! Thanks for adding a new Hero into our database!\n";
 		return;
 	}
