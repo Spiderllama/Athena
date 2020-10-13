@@ -1,2 +1,4 @@
 C:\Users\Spidermonk\source\repos\Athena\x64\Debug\Athena.exe
 C:\Users\Spidermonk\source\repos\Athena\x64\Debug\Athena.pdb
+C:\Users\Spidermonk\Coding Projects\Athena\x64\Debug\Athena.exe
+C:\Users\Spidermonk\Coding Projects\Athena\x64\Debug\Athena.pdb
