@@ -34,6 +34,36 @@
 		return name;
 	}
 
+	std::string Heroes::hero_role(std::string replace_role) {
+		role = replace_role;
+		return role;
+	}
+
+	int Heroes::hero_health(int replace_health) {
+		health = replace_health;
+		return health;
+	}
+
+	int Heroes::hero_armor(int replace_armor) {
+		armor = replace_armor;
+		return armor;
+	}
+
+	int Heroes::hero_shield(int replace_shield) {
+		shield = replace_shield;
+		return shield;
+	}
+
+	int Heroes::hero_dps(int replace_dps) {
+		dps = replace_dps;
+		return dps;
+	}
+
+	int Heroes::hero_age(int replace_age) {
+		age = replace_age;
+		return age;
+	}
+
 	void Heroes::add_hero() {
 		using namespace std;
 		int smartass_counter = 0;

@@ -11,7 +11,7 @@ int main() {
 	std::cin.ignore();
 	Ana.add_hero();
 	
-	system("cls");
+	clear();
 	std::cout << Ana.hero_info();
 	
 }
