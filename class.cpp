@@ -3,9 +3,15 @@
 #include <limits>
 #include "Header.h"
 
-	/*Heroes::Heroes(std::string new_name="PLACEHOLDER", std::string new_role="PLACEHOLDER", int new_health=0, int new_armor=0, int new_shield=0, int new_dps=0, int new_age=0)
-		: name(new_name), role(new_role), health(new_health), armor(new_armor), shield(new_shield), dps(new_dps), age(new_age) {}*/
-	
+//Constructor for hero class which allows attributes to be assigned during object creaion
+	Heroes::Heroes(std::string new_name, int new_age, std::string new_role, int new_health, int new_armor, int new_shield, int new_dps)
+		: name(new_name), age(new_age), role(new_role), health(new_health), armor(new_armor), shield(new_shield), dps(new_dps) {}
+
+
+//CPP call for the storage of hero names
+std::vector <std::string> hero_box;
+
+//Displays the info of a hero object - returned as a string value
 	std::string Heroes::hero_info() {
 		using namespace std;
 		string info;
@@ -29,41 +35,58 @@
 		return info;
 	}
 
-	std::string Heroes::hero_name(std::string replace_name) {
+//Allows specific hero object attributes to be replaced
+	void Heroes::change_name(std::string replace_name) {
 		name = replace_name;
-		return name;
+		return;
 	}
 
-	std::string Heroes::hero_role(std::string replace_role) {
-		role = replace_role;
-		return role;
-	}
-
-	int Heroes::hero_health(int replace_health) {
-		health = replace_health;
-		return health;
-	}
-
-	int Heroes::hero_armor(int replace_armor) {
-		armor = replace_armor;
-		return armor;
-	}
-
-	int Heroes::hero_shield(int replace_shield) {
-		shield = replace_shield;
-		return shield;
-	}
-
-	int Heroes::hero_dps(int replace_dps) {
-		dps = replace_dps;
-		return dps;
-	}
-
-	int Heroes::hero_age(int replace_age) {
+	void Heroes::change_age(int replace_age) {
 		age = replace_age;
-		return age;
+		return;
 	}
 
+	void Heroes::change_role(std::string replace_role) {
+		role = replace_role;
+		return;
+	}
+
+	void Heroes::change_health(int replace_health) {
+		health = replace_health;
+		return;
+	}
+
+	void Heroes::change_armor(int replace_armor) {
+		armor = replace_armor;
+		return;
+	}
+
+	void Heroes::change_shield(int replace_shield) {
+		shield = replace_shield;
+		return;
+	}
+
+	void Heroes::change_dps(int replace_dps) {
+		dps = replace_dps;
+		return;
+	}
+
+	
+
+//Replaces all attributes at the same time
+	void Heroes::change_all(std::string all_name, int all_age, std::string all_role, int all_health, int all_armor, int all_shield, int all_dps) {
+		name = all_name;
+		age = all_age;
+		role = all_role;
+		health = all_health;
+		armor = all_armor;
+		shield = all_shield;
+		dps = all_dps;
+	
+		return;
+	}
+
+//The "AI" that allows a new hero object to have attributes customized
 	void Heroes::add_hero() {
 		using namespace std;
 		int smartass_counter = 0;
@@ -252,8 +275,19 @@
 		return;
 	}
 
+//Used on a hero object to add them to the hero_box
+	void Heroes::add_box() {
+		hero_box.push_back(name);
+			return;
+}
 
+//Displays names of all heros stored in hero_box
+	void get_box() {
+		for (int i = 0; i < hero_box.size(); i++)
+		std::cout << hero_box[i] << " is number " << i << " in the box.\n";
+	}
 
+//Main logo in a string value
 	std::string splash_screen() {
 		std::string logo;
 	
@@ -327,10 +361,12 @@
 		}
 		*/
 	}
-	
+
+//Archaic clearing system. Needs replaced once I figure out what to use instead (low priority) 
 	void clear(){
 		system("cls");
 	}
+//Not implemented yet
 	void main_menu() {
 		using namespace std;
 
