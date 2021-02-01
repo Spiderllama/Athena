@@ -6,8 +6,8 @@
 
 int main() {
 	Heroes Ana("Ana", 60, "Healer", 200, 0, 0, 75);
-	Heroes Baptise;
-	Heroes Bastion;
+	Heroes Baptise("Baptise");
+	Heroes Bastion("Bastion");
 	Heroes Rein;
 	Heroes Torb;
 
@@ -21,6 +21,8 @@ int main() {
 	clear();
 	std::cout << Ana.hero_info();*/
 	Ana.add_box();
+	Baptise.add_box();
+	Bastion.add_box();
 	std::cout << Ana.hero_info();
 	Ana.change_all("Baptise", 5, "DPS", 5000, 200, 500, 1000);
 	std::cout << Ana.hero_info();

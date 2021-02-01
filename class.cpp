@@ -2,6 +2,7 @@
 #include <string>
 #include <limits>
 #include "Header.h"
+#include <sstream>
 
 //Constructor for hero class which allows attributes to be assigned during object creaion
 	Heroes::Heroes(std::string new_name, int new_age, std::string new_role, int new_health, int new_armor, int new_shield, int new_dps)
@@ -10,6 +11,8 @@
 
 //CPP call for the storage of hero names
 std::vector <std::string> hero_box;
+
+
 
 //Displays the info of a hero object - returned as a string value
 	std::string Heroes::hero_info() {
@@ -277,6 +280,11 @@ std::vector <std::string> hero_box;
 
 //Used on a hero object to add them to the hero_box
 	void Heroes::add_box() {
+
+		if (hero_box.empty()){
+			hero_box.push_back("<EMPTY>");
+		}
+
 		hero_box.push_back(name);
 			return;
 }
@@ -401,3 +409,4 @@ std::vector <std::string> hero_box;
 
 
 	}
+//Hero Box visuals
