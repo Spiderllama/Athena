@@ -20,7 +20,7 @@ int main() {
 	
 	clear();
 	std::cout << Ana.hero_info();*/
-	Ana.add_box();
+	Ana.add_hero();
 	Baptise.add_box();
 	Bastion.add_box();
 	std::cout << Ana.hero_info();

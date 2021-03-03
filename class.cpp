@@ -12,6 +12,10 @@
 //CPP call for the storage of hero names
 std::vector <std::string> hero_box;
 
+//Storage of AI responses to avoid multiple copies of same text - Executed as function 
+std::vector <std::string> AI_responses;
+
+
 
 
 //Displays the info of a hero object - returned as a string value
@@ -89,10 +93,12 @@ std::vector <std::string> hero_box;
 		return;
 	}
 
+
 //The "AI" that allows a new hero object to have attributes customized
 	void Heroes::add_hero() {
 		using namespace std;
 		int smartass_counter = 0;
+		add_AI_string();
 
 		cout << "Thank you for using Athena by Winston(tm). Please type the name of the prospective Hero: ";
 		getline(cin, name);
@@ -107,22 +113,12 @@ std::vector <std::string> hero_box;
 				if (smartass_counter == 0) {
 					cout << "\nI'm 100% sure that age can't contain alphabetic characters. NUMBERS ONLY! Please try again: ";
 				}
-				else if (smartass_counter == 1) {
-					cout << "\nAs we previously discussed you can't use letters. NUMBERS ONLY! Please try again: ";
+				else {
+					cout << "\n" << AI_responses[smartass_counter];	
 				}
-				else if (smartass_counter == 2) {
-					cout << "\n3rd time is not the charm. See, even *I* can use numbers and I'm just machinery. NUMBERS ONLY! Please try again: ";
+				if (smartass_counter < 5) {
+					smartass_counter++;
 				}
-				else if (smartass_counter == 3) {
-					cout << "\nDid you really think that typing a letter again would have a different result?\n\nDo you know what the definition of insanity is? NUMBERS ONLY! Try again: ";
-				}
-				else if (smartass_counter == 4) {
-					cout << "\nI'm glad you're not the hero in question as I would very much be concerned with your IQ. NUMBERS ONLY!\n\nDo it again: ";
-				}
-				else if (smartass_counter >= 5) {
-					cout << "\nTHAT'S IT! I'm done with you. Message set to repeat.\n\n**** off and also NUMBERS ONLY!!  ";
-				}
-				smartass_counter++;
 				cin >> age;
 			}
 			if (!cin.fail()) {
@@ -143,22 +139,12 @@ std::vector <std::string> hero_box;
 				if (smartass_counter == 0) {
 					cout << "\nI'm 100% sure that health pools can't contain alphabetic characters. NUMBERS ONLY! Please try again: ";
 				}
-				else if (smartass_counter == 1) {
-					cout << "\nAs we previously discussed you can't use letters. NUMBERS ONLY! Please try again: ";
+				else {
+					cout << "\n" << AI_responses[smartass_counter];
 				}
-				else if (smartass_counter == 2) {
-					cout << "\n3rd time is not the charm. See, even *I* can use numbers and I'm just machinery. NUMBERS ONLY! Please try again: ";
+				if (smartass_counter < 5) {
+					smartass_counter++;
 				}
-				else if (smartass_counter == 3) {
-					cout << "\nDid you really think that typing a letter again would have a different result?\n\nDo you know what the definition of insanity is? NUMBERS ONLY! Try again: ";
-				}
-				else if (smartass_counter == 4) {
-					cout << "\nI'm glad you're not the hero in question as I would very much be concerned with your IQ. NUMBERS ONLY! Do it again: ";
-				}
-				else if (smartass_counter >= 5) {
-					cout << "\nTHAT'S IT! I'm done with you. Message set to repeat.\n\n**** off and also NUMBERS ONLY!!  ";
-				}
-				smartass_counter++;
 				cin >> health;
 			}
 			if (!cin.fail()) {
@@ -177,22 +163,12 @@ std::vector <std::string> hero_box;
 				if (smartass_counter == 0) {
 					cout << "\nI'm 100% sure that armor weight can't contain alphabetic characters. NUMBERS ONLY! Please try again: ";
 				}
-				else if (smartass_counter == 1) {
-					cout << "\nAs we previously discussed you can't use letters. NUMBERS ONLY! Please try again: ";
+				else {
+					cout << "\n" << AI_responses[smartass_counter];
 				}
-				else if (smartass_counter == 2) {
-					cout << "\n3rd time is not the charm. See, even *I* can use numbers and I'm just machinery. NUMBERS ONLY! Please try again: ";
+				if (smartass_counter < 5) {
+					smartass_counter++;
 				}
-				else if (smartass_counter == 3) {
-					cout << "\nDid you really think that typing a letter again would have a different result?\n\nDo you know what the definition of insanity is? NUMBERS ONLY! Try again: ";
-				}
-				else if (smartass_counter == 4) {
-					cout << "\nI'm glad you're not the hero in question as I would very much be concerned with your IQ. NUMBERS ONLY!\n\nDo it again: ";
-				}
-				else if (smartass_counter >= 5) {
-					cout << "\nTHAT'S IT! I'm done with you. Message set to repeat.\n\n**** off and also NUMBERS ONLY!!  ";
-				}
-				smartass_counter++;
 				cin >> armor;
 			}
 			if (!cin.fail()) {
@@ -213,22 +189,12 @@ std::vector <std::string> hero_box;
 				if (smartass_counter == 0) {
 					cout << "\nI'm 100% sure that shield % can't contain alphabetic characters. NUMBERS ONLY! Please try again: ";
 				}
-				else if (smartass_counter == 1) {
-					cout << "\nAs we previously discussed you can't use letters. NUMBERS ONLY! Please try again: ";
+				else {
+					cout << "\n" << AI_responses[smartass_counter];
 				}
-				else if (smartass_counter == 2) {
-					cout << "\n3rd time is not the charm. See, even *I* can use numbers and I'm just machinery. NUMBERS ONLY! Please try again: ";
+				if (smartass_counter < 5) {
+					smartass_counter++;
 				}
-				else if (smartass_counter == 3) {
-					cout << "\nDid you really think that typing a letter again would have a different result?\n\nDo you know what the definition of insanity is? NUMBERS ONLY! Try again: ";
-				}
-				else if (smartass_counter == 4) {
-					cout << "\nI'm glad you're not the hero in question as I would very much be concerned with your IQ. NUMBERS ONLY!\n\nDo it again: ";
-				}
-				else if (smartass_counter >= 5) {
-					cout << "\nTHAT'S IT! I'm done with you. Message set to repeat.\n\n**** off and also NUMBERS ONLY!!  ";
-				}
-				smartass_counter++;
 				cin >> shield;
 			}
 			if (!cin.fail()) {
@@ -249,22 +215,12 @@ std::vector <std::string> hero_box;
 				if (smartass_counter == 0) {
 					cout << "\nI'm 100% sure that weapon damage can't contain alphabetic characters. NUMBERS ONLY! Please try again: ";
 				}
-				else if (smartass_counter == 1) {
-					cout << "\nAs we previously discussed you can't use letters. NUMBERS ONLY! Please try again: ";
+				else {
+					cout << "\n" << AI_responses[smartass_counter];
 				}
-				else if (smartass_counter == 2) {
-					cout << "\n3rd time is not the charm. See, even *I* can use numbers and I'm just machinery. NUMBERS ONLY! Please try again: ";
+				if (smartass_counter < 5) {
+					smartass_counter++;
 				}
-				else if (smartass_counter == 3) {
-					cout << "\nDid you really think that typing a letter again would have a different result?\n\nDo you know what the definition of insanity is? NUMBERS ONLY! Try again: ";
-				}
-				else if (smartass_counter == 4) {
-					cout << "\nI'm glad you're not the hero in question as I would very much be concerned with your IQ. NUMBERS ONLY!\n\nDo it again: ";
-				}
-				else if (smartass_counter >= 5) {
-					cout << "\nTHAT'S IT! I'm done with you. Message set to repeat.\n\n**** off and also NUMBERS ONLY!!  ";
-				}
-				smartass_counter++;
 				cin >> dps;
 			}
 			if (!cin.fail()) {
@@ -293,6 +249,24 @@ std::vector <std::string> hero_box;
 	void get_box() {
 		for (int i = 0; i < hero_box.size(); i++)
 		std::cout << hero_box[i] << " is number " << i << " in the box.\n";
+	}
+
+	//Fills the repeated AI responses initially to the vector
+	void add_AI_string() {
+		if (AI_responses.empty()) {
+			//Takes up [0]
+			AI_responses.push_back("never gets called");
+			//Takes up [1]
+			AI_responses.push_back("As we previously discussed you can't use letters. NUMBERS ONLY! Please try again: ");
+			//Takes up [2]
+			AI_responses.push_back("3rd time is not the charm. See, even *I* can use numbers and I'm just machinery. NUMBERS ONLY! Please try again: ");
+			//Takes up [3]
+			AI_responses.push_back("Did you really think that typing a letter again would have a different result?\n\nDo you know what the definition of insanity is? NUMBERS ONLY! Try again: ");
+			//Takes up [4]
+			AI_responses.push_back("I'm glad you're not the hero in question as I would very much be concerned with your IQ. NUMBERS ONLY!\n\nDo it again: ");
+			//Takes up [5]
+			AI_responses.push_back("THAT'S IT! I'm done with you. Message set to repeat.\n\n**** off and also NUMBERS ONLY!!  ");
+		}
 	}
 
 //Main logo in a string value

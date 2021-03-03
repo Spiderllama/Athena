@@ -47,6 +47,9 @@ std::string splash_screen();
 //Shortcut to CLS - Should be replaced by something better
 void clear();
 
+//Adds the string values to the vector located in class.cpp
+void add_AI_string();
+
 //Not yet implemented
 void main_menu();
 
