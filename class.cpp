@@ -247,7 +247,7 @@ std::vector <std::string> AI_responses;
 
 //Displays names of all heros stored in hero_box
 	void get_box() {
-		for (int i = 0; i < hero_box.size(); i++)
+		for (int i = 1; i < hero_box.size(); i++)
 		std::cout << hero_box[i] << " is number " << i << " in the box.\n";
 	}
 
